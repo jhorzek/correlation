@@ -57,8 +57,8 @@
     out$is_continuous <- TRUE
   }
 
-  if (all(x %% 1 == 0)) {
-    out$is_count <- TRUE
+  if (any(!is.na(x)) && all(x %% 1 == 0, na.rm = TRUE)) { 
+      out$is_count <- TRUE 
   }
 
   out
